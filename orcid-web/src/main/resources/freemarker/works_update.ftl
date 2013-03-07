@@ -25,6 +25,7 @@
             <h1 class="lightbox-title pull-left">Update Works</h1><a class="btn pull-right close-button">X</a>
         </div>
     </div>
+    <div style="width: 928px">
     <#if (searchAndAddForm.currentWorks)?? && (searchAndAddForm.currentWorks)?size &gt; 0>
         <div class="alert alert-block clearfix info">
             <#--<@spring.message "orcid.frontend.web.works_found"/>-->
@@ -41,6 +42,7 @@
             <@spring.message "orcid.frontend.web.no_works_found"/>
         </div>
     </#if>
+    </div>
     <div class="row">
         <div class="span6">
             <div id="left-selector-panel" data-work-count="${(currentWorksForm.currentWorks?size)!0}" class="selector-panel">
