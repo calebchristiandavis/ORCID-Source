@@ -71,26 +71,26 @@
 		   						<span class="orcid-error" ng-show="emailsPojo.errors.length > 0">
 			   						<span ng-repeat='error in emailsPojo.errors' ng-bind-html-unsafe="error"></span>
 			   					</span>
-		   						<div ng-repeat='email in emailsPojo.emails' style="height: 35px;">
+		   						<div ng-repeat='email in emailsPojo.emails' style="height: 45px;">
 		   							<div style="width: 300px; display: inline-block; *display: inline;" ng-bind="email.value"></div>
 		   							<div style="width: 100px; display: inline-block; *display: inline;"><a href="" ng-click="setPrimary($index)" ng-class="{muted: email.primary==false}" ng-bind="email.primary | emailPrimaryFtr"></a>
 		   							</div> 
 		   							<div ng-click="toggleCurrent($index)" ng-bind="email.current | emailCurrentFtr" style="width: 70px; display: inline-block; *display: inline;"></div> 
-		   							<span ng-bind="email.verified | emailVerifiedFtr" ng-click="verifyEmail($index)"></span>
+		   							<div ng-bind="email.verified | emailVerifiedFtr" ng-click="verifyEmail($index)" style="width: 70px; display: inline-block; *display: inline;"></div>
 		   							<span class="orcid-error" ng-show="email.errors.length > 0">
 		   							   <span ng-repeat='error in email.errors' ng-bind-html-unsafe="error"></span>
 		   							</span>
 		   							<div style="width 30px; display: inline-block; *display: inline;">
-		   								<span ng-show="email.primary == false" ng-click="deleteEmail($index)" class="btn btn-danger">X</span>
+		   								<span ng-show="email.primary == false" ng-click="deleteEmail($index)" class="btn btn-mini">X</span>
 		   							</div>
 		   							<div style="display:inline-block;">
 								        <div class="btn-group abs-left-top"  ng-class="{open: email.value==curPrivToggle}">
-								            <button class="btn dropdown-toggle privacy-toggle" ng-class="email.visibility | emailVisibilityBtnClassFtr" ng-bind-html-unsafe="email.visibility | emailVisibilityFtr" ng-click="togglePrivacySelect($index)"></button>
+								            <button class="btn btn-mini dropdown-toggle privacy-toggle" ng-class="email.visibility | emailVisibilityBtnClassFtr" ng-bind-html-unsafe="email.visibility | emailVisibilityFtr" ng-click="togglePrivacySelect($index)"></button>
 											<ul class="dropdown-menu privacy-menu show">
-								                <li><a class="btn btn-success btn-privacy" href="#" ng-click="setPrivacy($index, 'PUBLIC', $event)">Public <span class="caret"></span></a></li>
-								                <li><a class="btn btn-warning btn-privacy" href="#" ng-click="setPrivacy($index, 'LIMITED', $event)">Limited <span class="caret"></span></a></li>
-								                <li><a class="btn btn-danger btn-privacy" href="#" ng-click="setPrivacy($index, 'PRIVATE', $event)">Private <span class="caret"></span></a></li>	
-								                <li><a class="btn" href="http://support.orcid.org/knowledgebase/articles/124518" target="_blank">Help <span class="caret"></span></a></li>
+								                <li><a class="btn btn-success btn-mini btn-privacy" href="#" ng-click="setPrivacy($index, 'PUBLIC', $event)">Public <span class="caret"></span></a></li>
+								                <li><a class="btn btn-warning btn-mini btn-privacy" href="#" ng-click="setPrivacy($index, 'LIMITED', $event)">Limited <span class="caret"></span></a></li>
+								                <li><a class="btn btn-danger btn-mini btn-privacy" href="#" ng-click="setPrivacy($index, 'PRIVATE', $event)">Private <span class="caret"></span></a></li>	
+								                <li><a class="btn btn-mini" href="http://support.orcid.org/knowledgebase/articles/124518" target="_blank">Help <span class="caret"></span></a></li>
 	            							</ul>        								        
 								        </div>
 									</div>
